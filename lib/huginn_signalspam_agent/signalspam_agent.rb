@@ -116,7 +116,7 @@ module Agents
     
       request = Net::HTTP::Post.new(url.path, headers)
       request.basic_auth(interpolated['username'], interpolated['password'])
-      request.set_form_data('message' => Base64.strict_encode64(interpolated['raw_email']))
+      request.set_form_data('message' => interpolated['raw_email'])
     
       response = http.request(request)
     
