@@ -98,8 +98,12 @@ module Agents
 
       if interpolated['debug'] == 'true'
         log "request status : #{code}"
-        log "body"
-        log body
+        if !body.empty?
+          log "body"
+          log body
+        else
+          log "body is empty"
+        end
       end
 
     end
